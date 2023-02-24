@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/Hextone" mode="merge"/>
+    <filter root="/content/Hextone" mode="merge"/>
+    <filter root="/content/dam/Hextone/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/Hextone" mode="merge"/>
+</workspaceFilter>

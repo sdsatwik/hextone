@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/Hextone",
+        "create path (nt:unstructured) /content/dam/Hextone/jcr:content",
+        "set properties on /content/dam/Hextone/jcr:content\n  set cq:conf{String} to /conf/Hextone\n  set jcr:title{String} to \"Hextone\"\nend"
+    ]
+}
