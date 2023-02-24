@@ -1,3 +1,6 @@
+
+<html lang="en">
+
 <!--/*
     Copyright 2017 Adobe Systems Incorporated
 
@@ -13,8 +16,163 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
+
 <sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
     <sly data-sly-call="${clientlib.css @ categories='Hextone.base'}"/>
+</sly>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+    <title>Prospectus Express</title>
+
+
+
+    <style>
+        .topNav {
+            background-color: #0C4C7E;
+        }
+
+        .logoWhite {
+            height: 30px;
+        }
+
+        .menuNav {
+            border-bottom: 1px solid rgb(206, 200, 200);
+            padding: 0;
+            background-color: white;
+        }
+
+        .menuItems {
+            display: flex;
+            justify-content: center;
+        }
+
+        .viewLink {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #084574;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .viewLink:focus,
+        .viewLink:hover {
+            color: #084574;
+        }
+
+        @media(min-width: 992px) {
+            .searchBox {
+                width: 450px;
+            }
+        }
+
+        @media (max-width:768px) {
+            .logoWhite {
+                height: 20px;
+            }
+
+            .leftSidebar {
+                background-color: #0C4C7E;
+                margin-top: 59px;
+
+            }
+
+            .viewList {
+                border-bottom: 2px solid #2274B5;
+                border-right: 0;
+                width: 100%;
+            }
+
+            .viewLink {
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .viewLink:hover {
+                color: white;
+            }
+
+            .menuItems {
+                padding: 0;
+                display: block;
+            }
+
+            .offcanvas.offcanvas-start {
+                width: 240px;
+            }
+        }
+
+        @media (max-width:280px) {
+            .logoWhite {
+                width: 80px;
+            }
+
+            .searchIcon {
+                font-size: small;
+                margin-left: 0 !important;
+                margin-right: 5px !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark topNav">
+        <div class="container-fluid ">
+            <div class="d-flex navContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon text-white"></span>
+                </button>
+                <div class="navbar-brand mx-4">
+                    <img src="/content/dam/Hextone/hextonlogowhite.png" class="logoWhite" />
+                </div>
+                <form role="search">
+                    <input class="form-control me-2 d-none d-sm-none d-md-flex searchBox" type="search"
+                        placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+            <div class="d-flex">
+                <i
+                    class="fa-solid fa-magnifying-glass text-white fs-5 mx-4 my-2 d-flex d-sm-flex d-md-none searchIcon"></i>
+                <span class="navbar-brand fs-6 d-none d-sm-none d-md-flex">To Print, Save or View PDF Click
+                    Here</span><img class="me-3 pdfImage d-none d-sm-flex " src="/content/dam/Hextone/file.png">
+            </div>
+
+        </div>
+    </nav>
+
+        <div class="col-lg-12">
+
+				<sly data-sly-resource="${'header' @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+
+        </div>
+
+
+   </body> 
+<sly data-sly-use.page="com.adobe.cq.wcm.core.components.models.Page" lang="${page.language}">
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html"
+         data-sly-test.clientlibCategoriesJsBody="${page.clientLibCategoriesJsBody}"
+         data-sly-call="${clientlib.js @ categories=clientlibCategoriesJsBody, async=page.isClientlibsAsync}"></sly>
 </sly>
 
 <sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
